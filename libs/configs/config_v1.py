@@ -4,6 +4,15 @@ from __future__ import print_function
 
 import tensorflow as tf
 
+
+##########################
+#                  devices for training
+##########################
+
+tf.app.flags.DEFINE_integer(
+    'device', 0 ,
+    'the value for CUDA_VISIBLE_DEVICES variable, -1 uses cpu')
+
 ##########################
 #                  restore
 ##########################

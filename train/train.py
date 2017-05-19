@@ -105,6 +105,9 @@ def restore(sess):
 def train():
     """The main function that runs training"""
 
+    print('using CUDA_VISIBLE_DEVICES=', FLAGS.device)
+    os.environ["CUDA_VISIBLE_DEVICES"] = str(FLAGS.device)
+
     ## data
     image, ih, iw, gt_boxes, gt_masks, num_instances, img_id = \
         datasets.get_dataset(FLAGS.dataset_name, 
